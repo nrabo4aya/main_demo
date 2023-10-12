@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestPerson {
     @Test
-    void name() {
+    void testGetPerson() {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
 
@@ -29,5 +29,21 @@ public class TestPerson {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    void testGetPlanet(){
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+
+        Request request = new Request.Builder()
+                .url("https://swapi.dev/api/planets/3/")
+                .get()
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
