@@ -18,11 +18,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TestPerson {
     private final String BASE_URL = "https://swapi.dev/api";
 
-    private final HttpClient httpClient = new HttpClient();
+    private final HttpClient httpClient = new HttpClient(BASE_URL);
 
     @Test
     void testGetPerson() throws JsonProcessingException {
-        HttpResponse response = httpClient.get(BASE_URL + "/people/1");
+        HttpResponse response = httpClient.get("/people/1");
 
         GetPersonResponse getPersonResponse = response.json(GetPersonResponse.class);
 
@@ -30,10 +30,9 @@ public class TestPerson {
     }
     @Test
      void testGetPlanet(){
-        GetPlanetResponse getPlanetResponse = httpClient.get(BASE_URL + "/planets/3/").json(GetPlanetResponse.class);
+        GetPlanetResponse getPlanetResponse = httpClient.get("/planets/3/").json(GetPlanetResponse.class);
 
         assertThat(getPlanetResponse.getName()).isEqualTo("Yavin IV");
-
 
    }
 }

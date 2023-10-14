@@ -8,15 +8,22 @@ import java.io.IOException;
 public class HttpClient {
 
     private final OkHttpClient client;
+    private String BASE_URL;
 
     public HttpClient(){
         client = new OkHttpClient().newBuilder()
                 .build();
     }
 
-    public HttpResponse get(String url) {
+    public HttpClient(String BASE_URL) {
+        this.BASE_URL = BASE_URL;
+        client = new OkHttpClient().newBuilder()
+                .build();
+    }
+
+    public HttpResponse get(String apiPath) {
         Request request = new Request.Builder()
-                .url(url)
+                .url(BASE_URL + apiPath)
                 .get()
                 .build();
 
