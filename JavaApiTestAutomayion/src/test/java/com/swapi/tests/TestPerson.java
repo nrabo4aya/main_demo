@@ -28,11 +28,12 @@ public class TestPerson {
 
         assertThat(getPersonResponse.getName()).isEqualTo("Luke Skywalker");
     }
+
     @Test
-     void testGetPlanet(){
+    void testGetPlanet() {
         GetPlanetResponse getPlanetResponse = httpClient.get("/planets/3/").json(GetPlanetResponse.class);
 
         assertThat(getPlanetResponse.getName()).isEqualTo("Yavin IV");
 
-   }
+    }
 }
