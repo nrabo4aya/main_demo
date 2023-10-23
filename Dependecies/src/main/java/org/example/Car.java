@@ -21,7 +21,7 @@ public class Car {
         return name;
     }
     public String engineType(){
-        return "Type of engine";
+        return "Type of engines";
 
     }
 }
