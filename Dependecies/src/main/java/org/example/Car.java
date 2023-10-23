@@ -2,6 +2,11 @@ package org.example;
 
 public class Car {
     public String name;
+
+    public Car(String name) {
+        this.name = name;
+    }
+
     public int maxSpeed;
     public void Color (){
         System.out.println("The color is pink");
@@ -21,7 +26,7 @@ public class Car {
         return name;
     }
     public String engineType(){
-        return "Type of engines";
+        return "Type of engine";
 
     }
 }

@@ -5,4 +5,8 @@ public class UsualCar extends Car {
     public String engineType() {
         return "Turbo mode is not available";
     }
+
+    public UsualCar(String name) {
+        super(name);
+    }
 }
