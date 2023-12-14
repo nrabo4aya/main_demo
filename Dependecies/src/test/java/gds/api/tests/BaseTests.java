@@ -12,6 +12,7 @@ public class BaseTests {
     public static final String USER_NAME = "ITRdevagent";
     public static final String USER_PASSWORD = "12345678qQ";
     public static final String BASE_URL = "https://gds-dev1.gillbus.com";
+    public static String token;
 
 
     @Test
@@ -23,7 +24,7 @@ public class BaseTests {
     @Test
     public void testLoginValid() {
         Response response = Login.executeLogin(USER_NAME, USER_PASSWORD, BASE_URL + "/v2.1/login");
-        String token = response.getBody().jsonPath().getString("access_token");
+        token = response.getBody().jsonPath().getString("access_token");
         assertThat(response.getStatusCode()).isEqualTo(200);
         assertThat(token).isNotNull();
     }
@@ -32,7 +33,7 @@ public class BaseTests {
     public void testSearch() {
 
         Response loginResponse = Login.executeLogin(USER_NAME, USER_PASSWORD, BASE_URL + "/v2.1/login");
-        String token = loginResponse.getBody().jsonPath().getString("access_token");
+        token = loginResponse.getBody().jsonPath().getString("access_token");
         assertThat(loginResponse.getStatusCode()).isEqualTo(200);
         assertThat(token).isNotNull();
 
