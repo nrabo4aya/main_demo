@@ -1,0 +1,6 @@
+.gradle/
+gradle/
+.idea/
+build/
+Dependecies.iml
+gradlew.bat
