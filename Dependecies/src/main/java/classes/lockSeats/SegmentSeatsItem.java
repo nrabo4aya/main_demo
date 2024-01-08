@@ -24,4 +24,16 @@ public class SegmentSeatsItem{
 	public int getPassengerNum(){
 		return passengerNum;
 	}
+
+	public void setTariffCode(String tariffCode) {
+		this.tariffCode = tariffCode;
+	}
+
+	public void setSeatId(Object seatId) {
+		this.seatId = seatId;
+	}
+
+	public void setPassengerNum(int passengerNum) {
+		this.passengerNum = passengerNum;
+	}
 }

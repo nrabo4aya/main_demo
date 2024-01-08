@@ -1,42 +1,34 @@
 package classes.lockSeats;
 
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LockSeatsResponse{
 
-	@JsonProperty("passengers")
-	private List<PassengersItem> passengers;
+	@JsonProperty("lockseats_id")
+	private String lockseatsId;
 
-	@JsonProperty("trip_id")
-	private String tripId;
+	@JsonProperty("required_fields")
+	private RequiredFields requiredFields;
 
-	@JsonProperty("trip_date")
-	private String tripDate;
+	@JsonProperty("baggage")
+	private Object baggage;
 
-	@JsonProperty("passenger_count")
-	private int passengerCount;
+	@JsonProperty("expires_in")
+	private int expiresIn;
 
-	@JsonProperty("seats")
-	private List<SeatsItem> seats;
-
-	public List<PassengersItem> getPassengers(){
-		return passengers;
+	public String getLockseatsId(){
+		return lockseatsId;
 	}
 
-	public String getTripId(){
-		return tripId;
+	public RequiredFields getRequiredFields(){
+		return requiredFields;
 	}
 
-	public String getTripDate(){
-		return tripDate;
+	public Object getBaggage(){
+		return baggage;
 	}
 
-	public int getPassengerCount(){
-		return passengerCount;
-	}
-
-	public List<SeatsItem> getSeats(){
-		return seats;
+	public int getExpiresIn(){
+		return expiresIn;
 	}
 }

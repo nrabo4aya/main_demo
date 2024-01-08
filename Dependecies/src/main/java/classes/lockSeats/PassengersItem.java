@@ -17,4 +17,12 @@ public class PassengersItem{
 	public int getPassengerNum(){
 		return passengerNum;
 	}
+
+	public void setPassengerAge(int passengerAge) {
+		this.passengerAge = passengerAge;
+	}
+
+	public void setPassengerNum(int passengerNum) {
+		this.passengerNum = passengerNum;
+	}
 }

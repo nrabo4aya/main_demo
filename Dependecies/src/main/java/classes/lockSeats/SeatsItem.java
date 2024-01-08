@@ -9,7 +9,7 @@ public class SeatsItem{
 	private String segmentId;
 
 	@JsonProperty("class")
-	private String jsonMemberClass;
+	private String seatClass;
 
 	@JsonProperty("segment_seats")
 	private List<SegmentSeatsItem> segmentSeats;
@@ -18,11 +18,23 @@ public class SeatsItem{
 		return segmentId;
 	}
 
-	public String getJsonMemberClass(){
-		return jsonMemberClass;
-	}
-
 	public List<SegmentSeatsItem> getSegmentSeats(){
 		return segmentSeats;
+	}
+
+	public void setSegmentId(String segmentId) {
+		this.segmentId = segmentId;
+	}
+
+	public String getSeatClass() {
+		return seatClass;
+	}
+
+	public void setSeatClass(String seatClass) {
+		this.seatClass = seatClass;
+	}
+
+	public void setSegmentSeats(List<SegmentSeatsItem> segmentSeats) {
+		this.segmentSeats = segmentSeats;
 	}
 }
